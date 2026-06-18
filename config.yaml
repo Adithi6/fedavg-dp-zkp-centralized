@@ -1,0 +1,56 @@
+experiment:
+  n_clients: 10
+  n_rounds: 2
+  local_epochs: 5
+
+security:
+  use_hash: true
+  hash_algorithm: sha256
+
+zkp:
+  enabled: true
+  proof_system: circom_snark
+  verify_before_aggregation: true
+  sample_size: 10
+  scale: 1000
+  threshold: 100000000
+
+logging:
+  log_file: experiment.log
+  log_level: INFO
+
+training:
+  optimizer: adam
+  learning_rate: 0.001
+
+model:
+  name: lenet
+  input_channels: 1
+  input_height: 28
+  input_width: 28
+  conv1_channels: 16
+  conv2_channels: 32
+  num_classes: 10
+
+data:
+  dataset_name: ylecun/mnist
+  batch_size: 64
+  test_batch_size: 256
+  alpha: 0.5
+  partition_by: label
+  min_partition_size: 10
+  self_balancing: true
+  seed: 42
+  normalize_mean: [0.1307]
+  normalize_std: [0.3081]
+
+weights:
+  dtype: float32
+
+dp:
+  enabled: true
+  clip_norm: 0.5
+  epsilon: 1.0
+  delta: 1e-5
+  auto_noise: true
+  base_noise: 0.05
