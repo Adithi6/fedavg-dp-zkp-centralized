@@ -177,6 +177,29 @@ Install:
 ```bash
 python main.py
 ```
+## Running the Project
+
+1. Clone the repository
+
+2. Install Python dependencies
+
+pip install torch torchvision datasets pyyaml numpy pandas
+
+3. Install Node dependencies
+
+cd zkp
+npm install
+cd ..
+
+4. Run
+
+python main.py
+
+Note:
+The required zk-SNARK runtime artifacts
+(update_norm.wasm, update_norm_0001.zkey and verification_key.json)
+are already included in the repository.
+No circuit recompilation is required.
 
 ## Note
 
