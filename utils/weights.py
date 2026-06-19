@@ -57,7 +57,7 @@ def bytes_to_weight_arrays(
 
 def apply_weight_arrays(model: nn.Module, arrays: list[np.ndarray]):
     for param, arr in zip(model.parameters(), arrays):
-        param.data = torch.from_numpy(arr).to(param.device)
+        param.data = torch.from_numpy(arr).clone().detach().to(param.device)
 
 
 def model_to_weight_arrays(model: nn.Module) -> list[np.ndarray]:

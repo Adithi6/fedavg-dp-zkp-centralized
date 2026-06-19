@@ -1,6 +1,6 @@
 experiment:
   n_clients: 10
-  n_rounds: 2
+  n_rounds: 20
   local_epochs: 5
 
 security:
