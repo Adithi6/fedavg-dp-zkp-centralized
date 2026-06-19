@@ -177,6 +177,18 @@ Install:
 python main.py
 ```
 
+## Note
+
+The repository already contains the required zk-SNARK runtime artifacts:
+
+- update_norm.wasm
+- update_norm_0001.zkey
+- verification_key.json
+
+Therefore, the circuit does not need to be recompiled before running the project.
+
+The Powers of Tau files and Circom compiler are not included in the repository because they are only required when regenerating proving and verification keys.
+
 During execution, the system will:
 
 * Train local client models
